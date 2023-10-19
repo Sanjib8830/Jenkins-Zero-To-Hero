@@ -1,7 +1,7 @@
 pipeline{
   agent {
     docker {
-            image 'your-custom-jenkins-worker-image:tag' // Replace with your Docker image containing JDK and other necessary tools
+            image 'openjdk:8-jdk' // Replace with your Docker image containing JDK and other necessary tools
         }
   }
   stages{
