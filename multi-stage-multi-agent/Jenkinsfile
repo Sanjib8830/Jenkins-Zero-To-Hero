@@ -10,7 +10,7 @@ pipeline{
         script {
                     checkout([$class: 'GitSCM',
                               branches: [[name: '*/master']],
-                              userRemoteConfigs: [[url: 'https://github.com/Sanjib8830/Jenkins-Zero-To-Hero/edit/main/multi-stage-multi-agent.git']],
+                              userRemoteConfigs: [[url: 'https://github.com/Sanjib8830/Jenkins-Zero-To-Hero/multi-stage-multi-agent.git']],
                               extensions: [[$class: 'PathRestriction', excludedPaths: '', includedPaths: 'HelloWorld.java']]])
                 }
       }
