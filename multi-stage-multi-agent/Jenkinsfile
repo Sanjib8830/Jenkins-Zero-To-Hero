@@ -7,9 +7,12 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
-        script{
-          checkout scm
-        }
+        script {
+                    checkout([$class: 'GitSCM',
+                              branches: [[name: '*/master']],
+                              userRemoteConfigs: [[url: 'https://github.com/Sanjib8830/Jenkins-Zero-To-Hero/edit/main/multi-stage-multi-agent.git']],
+                              extensions: [[$class: 'PathRestriction', excludedPaths: '', includedPaths: 'HelloWorld.java']]])
+                }
       }
     }
     stage('build'){
